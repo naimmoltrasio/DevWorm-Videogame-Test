@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://buivn8dvhglth"]
+[gd_scene load_steps=56 format=3 uid="uid://buivn8dvhglth"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_j613n"]
 [ext_resource type="Texture2D" uid="uid://cjbtsttx8lh5c" path="res://art/characters/player.png" id="2_m5boi"]
@@ -413,11 +413,18 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_mvsxn"]
+radius = 5.0
+
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_j613n")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4, -17)
 sprite_frames = SubResource("SpriteFrames_u7pd2")
-animation = &"death"
+animation = &"side_idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
+position = Vector2(5, -1)
+shape = SubResource("CircleShape2D_mvsxn")
