@@ -9,7 +9,7 @@ var player_inattack_zone = false
 var can_take_damage = true
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	deal_with_damage()
 	
 	if player_chase:
@@ -31,7 +31,7 @@ func _on_detection_area_body_entered(body):
 
 
 
-func _on_detection_area_body_exited(body):
+func _on_detection_area_body_exited(_body):
 	player = null
 	player_chase = false
 
